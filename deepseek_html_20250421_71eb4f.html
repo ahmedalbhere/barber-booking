@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باربر - نظام حجز الحلاقين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">باربر</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" id="clientLogin">دخول العميل</a></li>
+                    <li><a href="#" id="barberLogin">دخول الحلاق</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>احجز حلاقك في دقائق</h2>
+                <p>أقرب الحلاقين إليك، بأسعار مناسبة وتقييمات حقيقية</p>
+                
+                <div class="search-box">
+                    <input type="text" id="locationSearch" placeholder="أدخل موقعك (البلد/القرية/المنطقة)">
+                    <button id="findBarbers"><i class="fas fa-search"></i> بحث</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="barbers-list container" id="barbersList" style="display: none;">
+            <h3>الحلاقين المتاحين بالقرب منك</h3>
+            <div class="barbers-grid" id="barbersGrid">
+                <!-- سيتم ملؤها بالجافاسكريبت -->
+            </div>
+        </section>
+    </main>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">تسجيل الدخول</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group" id="otpGroup" style="display: none;">
+                    <label for="otp">كود التحقق</label>
+                    <input type="text" id="otp">
+                </div>
+                <div class="form-group" id="photoGroup" style="display: none;">
+                    <label for="photo">صورة الحلاق (اختياري)</label>
+                    <input type="file" id="photo" accept="image/*">
+                </div>
+                <button type="submit" id="loginBtn">إرسال</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</body>
+</html>

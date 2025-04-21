@@ -1,0 +1,375 @@
+/* أساسيات الصفحة */
+:root {
+    --primary-color: #4a148c;
+    --secondary-color: #ff6f00;
+    --light-color: #f5f5f5;
+    --dark-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* الهيدر */
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* قسم الهيرو */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/barber-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 0 4rem;
+    margin-top: 60px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-box button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #e65100;
+}
+
+/* قائمة الحلاقين */
+.barbers-list {
+    padding: 2rem 0;
+}
+
+.barbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.barber-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.barber-card:hover {
+    transform: translateY(-5px);
+}
+
+.barber-img {
+    height: 200px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+}
+
+.barber-info {
+    padding: 1rem;
+}
+
+.barber-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.barber-rating {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.barber-location {
+    display: flex;
+    align-items: center;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.barber-location i {
+    margin-left: 5px;
+}
+
+.book-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #38006b;
+}
+
+/* المودال */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#loginBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* صفحة الحلاق */
+.barber-dashboard {
+    display: none;
+    padding: 2rem 0;
+}
+
+.waiting-list {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.waiting-list h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.client-card {
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.client-info h4 {
+    margin-bottom: 0.3rem;
+}
+
+.client-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.client-actions button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.client-actions button:last-child {
+    margin-right: 0;
+}
+
+/* صفحة العميل */
+.client-booking {
+    display: none;
+    padding: 2rem 0;
+}
+
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.payment-options {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.payment-options h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.payment-method input {
+    margin-left: 0.5rem;
+}
+
+.confirm-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.confirm-btn:hover {
+    background-color: #38006b;
+}
